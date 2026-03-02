@@ -1,27 +1,19 @@
 <!doctype html>
 <html lang="fr">
   <head>
-    <!-- ================= META ================= -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Découvrez nos gîtes premium en bord de mer avec vue exceptionnelle et confort moderne."
-    />
+    <title>Gîte des Vagues</title>
 
-    <title>TahiGite - Gîtes Mer & Soleil</title>
-
-    <!-- ================= PRECONNECT FONTS ================= -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- ================= GOOGLE FONTS ================= -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Roboto:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Roboto:wght@100..900&display=swap"
       rel="stylesheet"
     />
 
-    <!-- ================= CSS ================= -->
+    <!-- Tailwind CSS -->
     <link rel="preload" href="./styles/output.css" as="style" />
     <link
       rel="stylesheet"
@@ -31,8 +23,8 @@
     />
   </head>
 
-  <body class="font-roboto bg-gray-50 text-gray-800 scroll-smooth">
-    <!-- ================= HEADER ================= -->
+  <body class="flex flex-col font-roboto text-gray-800">
+    <!-- HEADER -->
     <header
       class="sticky top-0 bg-white/80 backdrop-blur-md border-b border-gray-100 z-50 font-manrope"
     >
@@ -43,51 +35,38 @@
           Gîtes Mer & Soleil
         </h1>
 
+        <!-- Desktop -->
         <div class="hidden md:flex gap-6 items-center">
           <a
-            href="#"
+            href="./index.html"
             class="flex items-center gap-2 px-3 py-2 rounded-2xl text-sm font-medium hover:bg-blue-50 transition"
           >
-            <img
-              src="./images/home.png"
-              alt="Accueil"
-              width="20"
-              height="20"
-              loading="lazy"
-            />
+            <img class="w-5 h-5" src="./images/home.png" alt="Accueil" />
             Accueil
           </a>
-
           <a
-            href="#"
+            href="./gite.html"
             class="flex items-center gap-2 px-3 py-2 rounded-2xl text-sm font-medium hover:bg-blue-50 transition"
           >
-            <img
-              src="./images/box.png"
-              alt="Nos Gîtes"
-              width="20"
-              height="20"
-              loading="lazy"
-            />
+            <img class="w-5 h-5" src="./images/box.png" alt="Nos Gîtes" />
             Nos Gîtes
           </a>
-
           <a
-            href="#"
+            href="./contact.html"
             class="flex items-center gap-2 px-3 py-2 rounded-2xl text-sm font-medium hover:bg-blue-50 transition"
           >
-            <img
-              src="./images/email.png"
-              alt="Contact"
-              width="20"
-              height="20"
-              loading="lazy"
-            />
+            <img class="w-5 h-5" src="./images/email.png" alt="Contact" />
             Contact
           </a>
         </div>
 
-        <button id="burgerBtn" class="md:hidden text-2xl" aria-label="Menu">
+        <!-- Burger -->
+        <button
+          id="burgerBtn"
+          class="md:hidden text-2xl"
+          aria-label="Menu mobile"
+          aria-expanded="false"
+        >
           ☰
         </button>
       </nav>
@@ -97,117 +76,130 @@
         id="mobileMenu"
         class="hidden md:hidden flex-col gap-3 px-6 pb-6 bg-white shadow-lg"
       >
-        <a href="#" class="px-3 py-2 rounded-xl hover:bg-blue-50">Accueil</a>
-        <a href="#" class="px-3 py-2 rounded-xl hover:bg-blue-50">Nos Gîtes</a>
-        <a href="#" class="px-3 py-2 rounded-xl hover:bg-blue-50">Contact</a>
+        <a
+          href="./index.html"
+          class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-blue-50"
+          >Accueil</a
+        >
+        <a
+          href="./gite.html"
+          class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-blue-50"
+          >Nos Gîtes</a
+        >
+        <a
+          href="./contact.html"
+          class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-blue-50"
+          >Contact</a
+        >
       </div>
     </header>
 
-    <!-- ================= HERO ================= -->
-    <section
-      class="relative h-[75vh] flex items-center justify-center text-center overflow-hidden"
-    >
-      <!-- Image optimisée LCP -->
-      <picture class="absolute inset-0">
-        <source srcset="./images/tahiti.webp" type="image/webp" />
-        <source srcset="./images/tahiti.jpg" type="image/jpeg" />
-        <img
-          src="./images/tahiti.jpg"
-          alt="Plage paradisiaque en bord de mer"
-          class="w-full h-full object-cover"
-          fetchpriority="high"
-          decoding="async"
-        />
-      </picture>
+    <!-- HERO -->
+    <main>
+      <section
+        class="relative h-[80vh] bg-[url('../images/bg.jpg')] flex items-center justify-center bg-cover"
+      >
+        <div class="absolute inset-0 bg-black/50"></div>
 
-      <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative z-10 text-white text-center px-6 max-w-3xl">
+          <h2 class="text-4xl md:text-6xl font-bold mb-6 font-manrope">
+            Votre escapade face à l’océan
+          </h2>
+          <p class="mb-8 text-lg md:text-xl opacity-90">
+            Séjournez dans des gîtes confortables avec vue imprenable sur la
+            mer.
+          </p>
+          <a
+            href="./gite.html"
+            class="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-xl font-semibold transition shadow-lg"
+          >
+            Découvrir nos gîtes
+          </a>
+        </div>
+      </section>
+    </main>
 
-      <div class="relative z-10 text-white px-6">
-        <h2 class="text-4xl md:text-6xl font-bold mb-6">
-          Nos Gîtes au Bord de la Mer
+    <!-- POURQUOI NOUS -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-12 font-manrope"
+        >
+          Pourquoi choisir nos gîtes ?
         </h2>
 
-        <p class="max-w-2xl mx-auto text-lg opacity-90">
-          Luxe, confort et vue exceptionnelle sur la Méditerranée.
-        </p>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition"
+          >
+            <h3 class="font-semibold text-xl mb-3 text-blue-600">
+              Emplacement idéal
+            </h3>
+            <p class="text-gray-600">
+              À quelques pas de la plage avec accès direct aux activités
+              nautiques.
+            </p>
+          </div>
 
-        <button
-          class="mt-8 bg-white text-black px-6 py-3 rounded-xl font-semibold hover:scale-105 transition duration-300 shadow-lg"
-        >
-          Découvrir
-        </button>
+          <div
+            class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition"
+          >
+            <h3 class="font-semibold text-xl mb-3 text-blue-600">
+              Confort moderne
+            </h3>
+            <p class="text-gray-600">
+              Gîtes entièrement équipés, literie premium et terrasse privée.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition"
+          >
+            <h3 class="font-semibold text-xl mb-3 text-blue-600">
+              Vue exceptionnelle
+            </h3>
+            <p class="text-gray-600">
+              Profitez d’un panorama unique sur l’océan depuis votre logement.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
-
-    <!-- ================= GITES ================= -->
-    <section class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-6">
-        <h2 class="text-3xl font-bold mb-12 font-manrope">
-          Nos Gîtes Disponibles
+    <!-- AVIS -->
+    <section class="py-20 bg-gray-100">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 font-manrope">
+          Ce que disent nos clients
         </h2>
 
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <!-- CARD -->
-          <article
-            class="group flex flex-col rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-2xl hover:-translate-y-2 transition duration-300"
-          >
-            <picture>
-              <source srcset="./images/gite3.jpg" type="image/webp" />
-              <img
-                src="./images/gite3.jpg"
-                alt="Gîte Mer & Soleil"
-                loading="lazy"
-                class="w-full h-56 object-cover"
-              />
-            </picture>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-2xl shadow">
+            ⭐⭐⭐⭐⭐
+            <p class="mt-4 text-gray-600">
+              Séjour exceptionnel avec une vue incroyable.
+            </p>
+            <p class="mt-4 font-semibold">– Marie D.</p>
+          </div>
 
-            <div class="p-6 flex flex-col flex-grow">
-              <h3
-                class="text-lg font-semibold mb-3 group-hover:text-blue-600 transition"
-              >
-                Gîte Mer & Soleil
-              </h3>
+          <div class="bg-white p-6 rounded-2xl shadow">
+            ⭐⭐⭐⭐⭐
+            <p class="mt-4 text-gray-600">
+              Très propre, confortable et bien situé.
+            </p>
+            <p class="mt-4 font-semibold">– Julien L.</p>
+          </div>
 
-              <p class="text-sm text-gray-600 flex-grow">
-                Vue mer panoramique, terrasse privée et accès plage.
-              </p>
-
-              <div class="flex justify-between items-center mt-6">
-                <span class="font-bold text-lg text-blue-600">
-                  85€ / nuit
-                </span>
-
-                <button
-                  class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm"
-                >
-                  Réserver
-                </button>
-              </div>
-            </div>
-          </article>
+          <div class="bg-white p-6 rounded-2xl shadow">
+            ⭐⭐⭐⭐⭐
+            <p class="mt-4 text-gray-600">Nous reviendrons sans hésiter !</p>
+            <p class="mt-4 font-semibold">– Sophie M.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= FOOTER ================= -->
-    <footer class="bg-gray-900 text-gray-300 py-12">
-      <div class="max-w-6xl mx-auto px-6 text-center">
-        <h3 class="text-xl font-semibold text-white mb-4">
-          Gîtes Mer & Soleil
-        </h3>
-
-        <p class="text-sm opacity-70 mb-6">
-          Votre escapade parfaite au bord de la Méditerranée.
-        </p>
-
-        <p class="text-xs opacity-50">
-          © 2026 Gîtes Mer & Soleil - Tous droits réservés
-        </p>
-      </div>
-    </footer>
-
-    <!-- ================= SCRIPT ================= -->
-    <script defer>
+    <!-- SCRIPT MENU MOBILE -->
+    <script>
       const burgerBtn = document.getElementById("burgerBtn");
       const mobileMenu = document.getElementById("mobileMenu");
 
